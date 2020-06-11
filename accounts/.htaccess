@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)$ /tcm/accounts/index.php [QSA,L]
