@@ -38,7 +38,7 @@
                             <!--begin::Dashboard-->
                             <!--begin::Row-->
                             <div class="row mt-0 mt-lg-3">
-                                <div class="col-xl-4">
+                                <div class="col-lg-4">
                                     <!--begin::Mixed Widget 2-->
                                     <div class="card card-custom bg-gray-100 gutter-b card-stretch">
                                         <!--begin::Header-->
@@ -261,7 +261,7 @@
                                     </div>
                                     <!--end::Base Table Widget 2-->
                                 </div>
-                                <div class="col-xl-8">
+                                <div class="col-lg-8">
                                     <!--begin::Base Table Widget 8-->
                                     <div class="card card-custom card-stretch gutter-b">
                                         <!--begin::Header-->

@@ -53,7 +53,7 @@
                             <div class="row mt-0 mt-lg-3">
 
                             
-                                <div class="col-xl-4">
+                                <div class="col-lg-4">
                                     <!--begin::Tiles Widget 7-->
                                     <div class="card card-custom bgi-no-repeat gutter-b card-stretch"
                                         style="background-color: #1B283F; background-position: calc(100% + 0.5rem) calc(100% + 0.5rem); background-size: 50% auto; background-image: url(https://keenthemes.com/metronic/themes/metronic/theme/html/demo7/dist/assets/media/svg/patterns/rhone.svg)">
@@ -81,7 +81,7 @@
                                 </div>
 
 
-                                <div class="col-xl-4">
+                                <div class="col-lg-4">
                                     <!--begin::Tiles Widget 7-->
                                     <div class="card card-custom bg-warning bgi-no-repeat gutter-b card-stretch"
                                         style=" background-position: calc(100% + 0.5rem) calc(100% + 0.5rem); background-size: 50% auto; background-image: url(https://keenthemes.com/metronic/themes/metronic/theme/html/demo7/dist/assets/media/svg/patterns/rhone.svg)">
@@ -110,7 +110,7 @@
 
 
 
-                                <div class="col-xl-4">
+                                <div class="col-lg-4">
                                     <!--begin::Tiles Widget 7-->
                                     <div class="card card-custom bg-info bgi-no-repeat gutter-b card-stretch"
                                         style=" background-position: calc(100% + 0.5rem) calc(100% + 0.5rem); background-size: 50% auto; background-image: url(https://keenthemes.com/metronic/themes/metronic/theme/html/demo7/dist/assets/media/svg/patterns/rhone.svg)">

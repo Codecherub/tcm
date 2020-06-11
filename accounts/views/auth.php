@@ -15,19 +15,19 @@
 
         
                     <!--begin::Page Custom Styles(used by this page)-->
-                             <link href="themes/metronic/theme/html/demo7/dist/assets/css/pages/login/login-1.css?v=7.0.4" rel="stylesheet" type="text/css"/>
+                             <link href="https://keenthemes.com/metronic/themes/metronic/theme/html/demo7/dist/assets/css/pages/login/login-1.css?v=7.0.4" rel="stylesheet" type="text/css"/>
                         <!--end::Page Custom Styles-->
         
         <!--begin::Global Theme Styles(used by all pages)-->
-                    <link href="themes/metronic/theme/html/demo7/dist/assets/plugins/global/plugins.bundle.css?v=7.0.4" rel="stylesheet" type="text/css"/>
-                    <link href="themes/metronic/theme/html/demo7/dist/assets/plugins/custom/prismjs/prismjs.bundle.css?v=7.0.4" rel="stylesheet" type="text/css"/>
-                    <link href="themes/metronic/theme/html/demo7/dist/assets/css/style.bundle.css?v=7.0.4" rel="stylesheet" type="text/css"/>
+                    <link href="https://keenthemes.com/metronic/themes/metronic/theme/html/demo7/dist/assets/plugins/global/plugins.bundle.css?v=7.0.4" rel="stylesheet" type="text/css"/>
+                    <link href="https://keenthemes.com/metronic/themes/metronic/theme/html/demo7/dist/assets/plugins/custom/prismjs/prismjs.bundle.css?v=7.0.4" rel="stylesheet" type="text/css"/>
+                    <link href="https://keenthemes.com/metronic/themes/metronic/theme/html/demo7/dist/assets/css/style.bundle.css?v=7.0.4" rel="stylesheet" type="text/css"/>
                 <!--end::Global Theme Styles-->
 
         <!--begin::Layout Themes(used by all pages)-->
                 <!--end::Layout Themes-->
 
-        <link rel="shortcut icon" href="themes/metronic/theme/html/demo7/dist/assets/media/logos/favicon.ico"/>
+        <link rel="shortcut icon" href="https://keenthemes.com/metronic/themes/metronic/theme/html/demo7/dist/assets/media/logos/favicon.ico"/>
 
     </head>
     <!--end::Head-->
@@ -45,7 +45,7 @@
         <div class="d-flex flex-column-auto flex-column pt-lg-40 pt-15">
             <!--begin::Aside header-->
             <a href="#" class="text-center mb-10">
-				<img src="/themes/metronic/theme/html/demo7/dist/assets/media/logos/logo-letter-1.png" class="max-h-70px" alt=""/>
+				<img src="https://keenthemes.com/metronic/themes/metronic/theme/html/demo7/dist/assets/media/logos/logo-letter-1.png" class="max-h-70px" alt=""/>
 			</a>
             <!--end::Aside header-->
 
@@ -287,14 +287,14 @@
         <!--end::Global Config-->
 
     	<!--begin::Global Theme Bundle(used by all pages)-->
-    	    	   <script src="themes/metronic/theme/html/demo7/dist/assets/plugins/global/plugins.bundle.js"></script>
-		    	   <script src="themes/metronic/theme/html/demo7/dist/assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
-		    	   <script src="themes/metronic/theme/html/demo7/dist/assets/js/scripts.bundle.js"></script>
+    	    	   <script src="https://keenthemes.com/metronic/themes/metronic/theme/html/demo7/dist/assets/plugins/global/plugins.bundle.js?v=7.0.4"></script>
+		    	   <script src="https://keenthemes.com/metronic/themes/metronic/theme/html/demo7/dist/assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.4"></script>
+		    	   <script src="https://keenthemes.com/metronic/themes/metronic/theme/html/demo7/dist/assets/js/scripts.bundle.js?v=7.0.4"></script>
 				<!--end::Global Theme Bundle-->
 
         
                     <!--begin::Page Scripts(used by this page)-->
-                            <script src="themes/metronic/theme/html/demo7/dist/assets/js/pages/custom/login/login-general.js?v=7.0.4"></script>
+                            <script src="https://keenthemes.com/metronic/themes/metronic/theme/html/demo7/dist/assets/js/pages/custom/login/login-general.js?v=7.0.4"></script>
                         <!--end::Page Scripts-->
                     <script src="themes/metronic/theme/html/demo7/dist/assets/js/app.js"></script>
             </body>

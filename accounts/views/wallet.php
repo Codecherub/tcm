@@ -42,7 +42,7 @@
                             <!--begin::Dashboard-->
                             <!--begin::Row-->
                             <div class="row mt-0 mt-lg-3">
-                                <div class="col-xl-4">
+                                <div class="col-lg-4">
                                     <div class="card card-custom gutter-b card-stretch">
                                         <!--begin::Header-->
                                         <div class="card-header border-0 pt-5">

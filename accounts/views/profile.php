@@ -43,7 +43,7 @@
                             <!--begin::Row-->
                             <div class="row mt-0 mt-lg-3">
                                
-                                <form class="col-xl-12 ajax">
+                                <form class="col-lg-12 ajax">
                                     <div class="card card-custom card-stretch">
                                         <!--begin::Header-->
                                         <div class="card-header py-3">
@@ -65,14 +65,14 @@
                                             <!--begin::Body-->
                                             <div class="card-body">
                                                 <div class="row">
-                                                    <label class="col-xl-3"></label>
-                                                    <div class="col-lg-9 col-xl-6">
+                                                    <label class="col-lg-3"></label>
+                                                    <div class="col-lg-9 col-lg-6">
                                                         <h5 class="font-weight-bold mb-6">Customer Info</h5>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label text-right"></label>
-                                                    <div class=" col-xs-3 col-lg-3 col-xl-3">
+                                                    <label class="col-lg-3 col-lg-3 col-form-label text-right"></label>
+                                                    <div class=" col-xs-3 col-lg-3 col-lg-3">
                                                         <div class="card card-body text-center">
                                                             <h1 class="far fa-gem"> </h1>
                                                             <small><?php echo $user['package']; ?></small>
@@ -81,17 +81,17 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label text-right">Full
+                                                    <label class="col-lg-3 col-lg-3 col-form-label text-right">Full
                                                         Name</label>
-                                                    <div class="col-lg-9 col-xl-6">
+                                                    <div class="col-lg-9 col-lg-6">
                                                         <input required class="form-control form-control-lg form-control-solid"
                                                             type="text" name="profile" value="<?php echo $user['fullname']; ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label text-right">Contact
+                                                    <label class="col-lg-3 col-lg-3 col-form-label text-right">Contact
                                                         Phone</label>
-                                                    <div class="col-lg-9 col-xl-6">
+                                                    <div class="col-lg-9 col-lg-6">
                                                         <div class="input-group input-group-lg input-group-solid">
                                                             <div class="input-group-prepend"><span
                                                                     class="input-group-text"><i
@@ -106,9 +106,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label text-right">Email
+                                                    <label class="col-lg-3 col-lg-3 col-form-label text-right">Email
                                                         Address</label>
-                                                    <div class="col-lg-9 col-xl-6">
+                                                    <div class="col-lg-9 col-lg-6">
                                                         <div class="input-group input-group-lg input-group-solid">
                                                             <div class="input-group-prepend"><span
                                                                     class="input-group-text"><i
@@ -122,16 +122,16 @@
                                                 </div>
 
                                                 <div class="row">
-                                                    <label class="col-xl-3"></label>
-                                                    <div class="col-lg-9 col-xl-6">
+                                                    <label class="col-lg-3"></label>
+                                                    <div class="col-lg-9 col-lg-6">
                                                         <h5 class="font-weight-bold mt-10 mb-6">Contact Info</h5>
                                                     </div>
                                                 </div>
                                              
                                                 <div class="form-group row">
                                                     <label
-                                                        class="col-xl-3 col-lg-3 col-form-label text-right">Country</label>
-                                                    <div class="col-lg-9 col-xl-6">
+                                                        class="col-lg-3 col-lg-3 col-form-label text-right">Country</label>
+                                                    <div class="col-lg-9 col-lg-6">
                                                         <div class="input-group input-group-lg input-group-solid">
                                                             <div class="input-group-prepend"><span
                                                                     class="input-group-text"><i class="fas fa-globe-americas"></i></span></div>
@@ -435,9 +435,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label text-right">
+                                                    <label class="col-lg-3 col-lg-3 col-form-label text-right">
                                                         Address</label>
-                                                    <div class="col-lg-9 col-xl-6">
+                                                    <div class="col-lg-9 col-lg-6">
                                                         <div class="input-group input-group-lg input-group-solid">
                                                             <div class="input-group-prepend"><span
                                                                     class="input-group-text"><i
@@ -450,9 +450,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label text-right">Btc
+                                                    <label class="col-lg-3 col-lg-3 col-form-label text-right">Btc
                                                         Address</label>
-                                                    <div class="col-lg-9 col-xl-6">
+                                                    <div class="col-lg-9 col-lg-6">
                                                         <div class="input-group input-group-lg input-group-solid">
                                                         <div class="input-group-pre"><span
                                                                     class="input-group-text"><i
