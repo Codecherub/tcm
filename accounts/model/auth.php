@@ -22,8 +22,7 @@ if(isset($_POST['new_user'])){
             'action'=>array('alert'),
             'msg' => 'this email has already been used.',
             'blob'=>array(
-                'alert'=>'warning',
-                'port'=>array('location'=>'auth','time'=>3000)
+                'alert'=>'warning'
             )
         );    
     } else{
@@ -32,7 +31,9 @@ if(isset($_POST['new_user'])){
                 'action'=>array('alert','port'),
                 'msg' => 'hi '.$new_user.',  we sent an email to '.$email.' for id verification. pls check your email address to proceed. Thanks!  ',
                 'blob'=>array(
-                    'alert'=>'success')
+                    'alert'=>'success',
+                ,
+                'port'=>array('location'=>'auth','time'=>3000))
             ); 
         }else {
             $result = array(
