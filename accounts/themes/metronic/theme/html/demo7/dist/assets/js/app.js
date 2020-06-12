@@ -2,7 +2,7 @@ $('.ajax').submit(function(e){
     console.log('mock start')
     e.preventDefault();
     $.ajax({
-        url:'./model/controller.php',
+        url:'https://app.translogit.com/accounts/model/controller.php',
         method:'post',
         data:$(this).serialize()
     }).done(function(data){
@@ -94,7 +94,7 @@ $('#usdamtx').change(function(){
 
 function loader(){
     $.ajax({
-        url:"./model/controller.php",
+        url:"https://app.translogit.com/accounts/model/controller.php",
         method:"POST",
         data:"control=transactions&fetch=mytrans"
     }).done(function(data){
@@ -157,7 +157,7 @@ function loader(){
 
 $('#signout').click(function(){
     $.ajax({
-        url:"./model/controller.php",
+        url:"https://app.translogit.com/accounts/model/controller.php",
         method:"POST",
         data:"logout=true&control=transactions"
     }).done(function(data){
