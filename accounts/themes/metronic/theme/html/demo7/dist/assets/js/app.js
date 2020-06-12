@@ -29,6 +29,13 @@ $('.ajax').submit(function(e){
             // text: data.msg,
             // footer: '<a href>Why do I have this issue?</a>'
           })
+       } 
+       
+       //alerts controler
+       if(jQuery.inArray('login',data.action)>-1){
+        document.getElementById('logm').classList-=" show";
+        document.getElementById('logm').style.display=" none";
+        console.log('login success')
        }
        
        //ports controler
@@ -40,6 +47,13 @@ $('.ajax').submit(function(e){
        //loader controler
        if(jQuery.inArray('loader',data.action)>-1){
         loader()
+       }
+       
+       //Deposit Sequnce
+       if(jQuery.inArray('depo',data.action)>-1){
+       $('#depoModal').addClass('show');
+       $('#depoModal').fadeIn();
+       $('#depoItem').html(data.msgx)
        }
 
     //    $('.ajax').children().attr('value','');
@@ -139,4 +153,39 @@ function loader(){
     })
 }
 
+
+
+$('#signout').click(function(){
+    $.ajax({
+        url:"model/controller.php",
+        method:"POST",
+        data:"logout=true&control=transactions"
+    }).done(function(data){
+       toastr.info('you will be logged out in 3 seconds');
+       setTimeout(function(){location.assign("auth")},3000)
+    }).fail(function(){
+        toastr.error('action failed');
+    })
+})
+
+
+$('.closure').click(function(){
+    $('.modal,.modal-backdrop').removeClass('show');
+    $('.modal,.modal-backdrop').fadeOut();
+})
+
+function copyr(){
+    text = document.getElementById('btxwall');
+   
+    text.select()
+    text.setSelectionRange(0, 99999);
+   
+ 
+    document.execCommand("copy");
+    toastr.success('transfer address copied ')
+ 
+  /* Copy the text inside the text field */
+  
+  
+}
 loader();

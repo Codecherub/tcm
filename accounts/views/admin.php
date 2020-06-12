@@ -9,7 +9,7 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <style>
-    tr:nth-child(odd){
+    tr:nth-child(odd) {
         background: #fcfcfc !important;
     }
 </style>
@@ -29,7 +29,7 @@
             <!--begin::Wrapper-->
             <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
                 <!--begin::Header-->
-                <?php include "partials/header.php"; ?>
+               
                 <!--end::Header-->
 
                 <!--begin::Content-->
@@ -48,9 +48,9 @@
                                         <div class="card-header border-0 pt-5">
                                             <div class="card-title font-weight-bolder">
                                                 <div class="card-label">
-                                                    <?php echo explode(' ',$user['fullname'])[0]."'s Wallet"; ?>
+                                                    Hello Boss!
                                                     <div class="font-size-sm text-muted mt-2">
-                                                        <?php echo mysqli_num_rows(mysqli_query($db,"select * from trans where user = '".$user['email']."'")); ?> Transactions
+                                                        Overview
                                                     </div>
                                                 </div>
                                             </div>
@@ -96,30 +96,22 @@
                                                             <div>
                                                                 <div
                                                                     class="font-size-h4 text-dark-75 font-weight-bolder">
-                                                                    $<?php echo $user['wallet']; ?> </div>
+                                                                    <?php  echo mysqli_num_rows(mysqli_query($db,"select * from users")); ?>
+                                                                </div>
                                                                 <div
                                                                     class="font-size-sm text-muted font-weight-bold mt-1">
-                                                                    Current Balance</div>
+                                                                    Registered Users</div>
                                                             </div>
                                                             <!--end::Title-->
                                                         </div>
                                                     </div>
-                                                    <!--end::Item-->
-
-                                                    <!--begin::Item-->
-                                                    
-                                                    <!--end::Widget Item-->
-                                                </div>
-
-                                                <div class="row row-paddingless">
-                                                    <!--begin::Item-->
                                                     <div class="col">
                                                         <div class="d-flex align-items-center mr-2">
                                                             <!--begin::Symbol-->
                                                             <div
-                                                                class="symbol symbol-45 symbol-light-success mr-4 flex-shrink-0">
+                                                                class="symbol symbol-45 symbol-light-info mr-4 flex-shrink-0">
                                                                 <div class="symbol-label">
-                                                                    <span class="svg-icon svg-icon-lg svg-icon-success">
+                                                                    <span class="svg-icon svg-icon-lg svg-icon-info">
                                                                         <!--begin::Svg Icon | path:/metronic/themes/metronic/theme/html/demo7/dist/assets/media/svg/icons/Shopping/Cart3.svg--><svg
                                                                             xmlns="http://www.w3.org/2000/svg"
                                                                             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -146,30 +138,42 @@
                                                             <div>
                                                                 <div
                                                                     class="font-size-h4 text-dark-75 font-weight-bolder">
-                                                                    <?php if($user['wallet'] > 0){ echo rand(3,25)."%";}?></div>
+                                                                    <?php echo mysqli_num_rows(mysqli_query($db,"select * from trans where status = 0 ")); ?>
+                                                                </div>
                                                                 <div
                                                                     class="font-size-sm text-muted font-weight-bold mt-1">
-                                                                   Dynamic Profit Range</div>
+                                                                    pending transactions</div>
                                                             </div>
                                                             <!--end::Title-->
                                                         </div>
+
+                                                        
                                                     </div>
+                                              
                                                     <!--end::Item-->
 
-                                                
+                                                    <!--begin::Item-->
 
-                                                   
+                                                    <!--end::Widget Item-->
                                                 </div>
-                                                <div class=" pt-8 row">
-                                                <button class="btn btn-success btn-lg col-xs-12" style="width: 100%;"  data-toggle="modal" data-target="#exampleModalShort">Deposit Now</button>
-                                                <button class="btn btn-primary btn-lg col-xs-12 " style="width: 100%; margin-top:10px"  data-toggle="modal" data-target="#exampleModalLong">Request Withdrawal</button>
+                                                <form class="ajax" style="margin-top:40px !important">
+                                                <div class="form-group p">
+                                                    <b class="form-label ">Your Btc address</b>
+                                                    <input class="form-control" name="btc" value="<?php echo $btc; ?>">
+                                                    <input type="hidden" name="control" value="admin">
                                                 </div>
+                                                <div class="form-group">
+                                                    <button class="btn btn-info text-right">change</button>
+                                                </div>
+                                            </form>
+
                                             </div>
+
+                                            
                                             <!--end::Items-->
-                                                
+
                                             <!--begin::Chart-->
-                                            <div id="kt_mixed_widget_17_chart" class="card-rounded-bottom"
-                                                data-color="warning" style="height: 200px"></div>
+
                                             <!--end::Chart-->
                                         </div>
                                         <!--end::Body-->
@@ -180,192 +184,307 @@
 
                                 <div class="col-lg-8">
                                     <!--begin::Base Table Widget 2-->
-                                    <div class="card card-custom card-stretch gutter-b">
+                                    <div class="card card-custom gutter-b">
                                         <!--begin::Header-->
-                                        <div class="card-header border-0 pt-5">
+                                        <div class="card-header border-0 py-5">
                                             <h3 class="card-title align-items-start flex-column">
-                                                <span class="card-label font-weight-bolder text-dark">Transactions</span>
-                                                <span class="text-muted mt-3 font-weight-bold font-size-sm"><?php echo mysqli_num_rows(mysqli_query($db,"select * from trans where user='".$user['email']."' ")); ?></span>
+                                                <span class="card-label font-weight-bolder text-dark">Users</span>
+                                                <span class="text-muted mt-3 font-weight-bold font-size-sm"><?php echo mysqli_num_rows(mysqli_query($db,"select * from users ")); ?> users</span>
                                             </h3>
-                                         
+                                           
                                         </div>
                                         <!--end::Header-->
 
                                         <!--begin::Body-->
-                                        <div class="card-body pt-2 pb-0">
+                                        <div class="card-body pt-0 pb-3">
                                             <!--begin::Table-->
                                             <div class="table-responsive">
-                                                <table class="table table-borderless table-stripped table-vertical-center">
+                                                <table
+                                                    class="table table-head-custom table-head-bg table-borderless table-vertical-center">
                                                     <thead>
-                                                        <tr>
-                                                            <th class="p-0" style="width: 50px"></th>
-                                                            <th class="p-0" style="min-width:50px"></th>
-                                                            <th class="p-0" style="min-width:40px"></th>
-                                                            <th class="p-0" style="min-width:20px"></th>
+                                                        <tr class="text-uppercase">
+                                                            <th style="min-width: 100px" class="pl-7"><span
+                                                                    class="text-dark-75">Name</span></th>
+                                                            <th style="min-width: 100px">Wallet</th>
+                                                            <th style="min-width: 100px">Plan</th>
+                                                            <th style="min-width: 100px">action</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody class="mytable">
-                                                       
-                                                      
+                                                    <tbody>
+
+                                                        <?php
+                                                       $g = mysqli_query($db,"select * from users order by id desc");
+                                                       while($get=mysqli_fetch_array($g)){?>
+                                                       <form class="ajax">
+                                                        <tr class="itemj">
+                                                            <td class="pl-0 py-8">
+                                      
+
+                                                                    <div>
+                                                                        <a href="#"
+                                                                            class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg"><?php echo $get['fullname']; ?></a>
+                                                                        <span
+                                                                            class="text-muted font-weight-bold d-block"><?php echo $get['email']; ?></span>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <input name="wallet" class="form-control" value="<?php echo $get['wallet']; ?>">
+                                                            </td>
+                                                            <td>
+                                                            <select name="package" class="form-control" >
+                                                                <option value="<?php echo $get['package']; ?>"><?php echo $get['package']; ?></option>
+                                                                <option value="basic $get['package']; ?>">basic</option>
+                                                                <option value="Gold">Gold</option>
+                                                                <option value="Platinum">Platinum</option>
+                                                            </select>
+                                                            </td>
+                                                            <input type="hidden" name="control" value="admin">
+                                                            <input type="hidden" name="user" value="<?php echo $get['email']; ?>">
+                                                           
+                                                            <td class="text-right pr-0">
+                                                            <button type="submit" class="btn btn-light btn-hover-primary" type="submit">update </button>
+                                                                   
+                                                            </td>
+                                                        </tr>
+                                                        </form>
+                                                       <?php } ?>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                            <div class="btnj"></div>
+                                            <!--end::Table-->
+                                        </div>
+                                        <!--end::Body-->
+
+
+
+                                        
+                                    </div>
+                                    <!--end::Base Table Widget 2-->
+                                    <!--begin::Base Table Widget 2-->
+                                    <div class="card card-custom gutter-b">
+                                        <!--begin::Header-->
+                                        <div class="card-header border-0 py-5">
+                                            <h3 class="card-title align-items-start flex-column">
+                                                <span class="card-label font-weight-bolder text-dark">Pending transactions</span>
+                                                <span class="text-muted mt-3 font-weight-bold font-size-sm"><?php echo mysqli_num_rows(mysqli_query($db,"select * from trans where status=0 ")); ?> pending</span>
+                                            </h3>
+                                           
+                                        </div>
+                                        <!--end::Header-->
+
+                                        <!--begin::Body-->
+                                        <div class="card-body pt-0 pb-3">
+                                            <!--begin::Table-->
+                                            <div class="table-responsive">
+                                                <table
+                                                    class="table table-head-custom table-head-bg table-borderless table-vertical-center">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th style="min-width: 100px" class="pl-7"><span
+                                                                    class="text-dark-75">Name</span></th>
+                                                            <th style="min-width: 100px">amount</th>
+                                                            <th style="min-width: 100px">status</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                        <?php
+                                                       $g = mysqli_query($db,"select * from trans where status='0' order by id desc");
+                                                       while($get=mysqli_fetch_array($g)){?>
+                                                       <form class="ajax">
+                                                        <tr class="itemx">
+                                                            <td class="pl-0 py-8">
+                                      
+
+                                                                    <div>
+                                                                        <a href="#"
+                                                                            class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg"><?php
+                                                                            $gx = mysqli_query($db,"select * from users where email='".$get['user']."'");
+                                                                            $G=mysqli_fetch_array($gx);
+                                                                             echo $G['fullname']; ?></a>
+                                                                        <span
+                                                                            class="text-muted font-weight-bold d-block"><?php echo $get['date']; ?></span>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                             $<?php echo $get['amt']; ?>
+                                                            </td>
+                                                           
+                                                            <input type="hidden" name="control" value="admin">
+                                                            <input type="hidden" name="ref" value="<?php echo $get['ref']; ?>">
+                                                           
+                                                            <td class="text-right pr-0">
+                                                            <button type="submit" class="btn btn-light btn-hover-primary" type="submit">approve </button>
+                                                                   
+                                                            </td>
+                                                        </tr>
+                                                        </form>
+                                                       <?php } ?>
                                                     </tbody>
                                                 </table>
                                             </div>
                                             <!--end::Table-->
-
-                                            <div class="card-footer">
-                                            <div class="btns btn-group"></div>
-                                            </div>
+                                            <div class="btnx"></div>
                                         </div>
                                         <!--end::Body-->
+
+
+
+                                        
                                     </div>
+                                    <!--end::Base Table Widget 2-->
+                                    <!--begin::Base Table Widget 2-->
+                                    
                                     <!--end::Base Table Widget 2-->
                                 </div>
                             </div>
                             <!--end::Row-->
 
 
-                        <!-- deposit modal  -->
-                            
-<!-- Modal-->
-<div class="modal fade" id="exampleModalShort" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Crypto Deposit</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <i aria-hidden="true" class="ki ki-close"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-               <form class="ajax">
-               <div class="form-group">
-				<label> Deposit amount</label>
-				<div class="input-group">
-					<div class="input-group-prepend"><span class="input-group-text ">$</span></div>
-					<input type="number" maxlength="7" name='deposit' required id="usdamt" class="form-control" placeholder="deposit amt (USD)" />
-				</div>
-				<span class="form-text text-muted">Deposit amount in USD</span>
-               </div>
-               
-               <div class="form-group">
-				<label>BTC Equivalent</label>
-				<div class="input-group">
-					<div class="input-group-prepend"><span class="input-group-text fab fa-bitcoin"></span></div>
-					<input type="number" id="btcequiv" name="btc" readonly class="form-control"  placeholder="calculated BTC Equivalent" />
-				</div>
-				<span class="form-text text-muted">Btc to be sent</span>
-			   </div>
-               
-               <div class="form-group">
-				<label>BTC Wallet address</label>
-				<div class="input-group">
-					<div class="input-group-prepend"><span class="input-group-text far fa-user-circle"></span></div>
-					<input   id="btcwallet" name="wallet" class="form-control" readOnly value="<?php echo $btc; ?>"  />
-				</div>
-				<span class="form-text text-muted">personal Btc wallet</span>
-			   </div>
-               
-               <div class="form-group">
-				<label>Refrence id</label>
-				<div class="input-group">
-					<div class="input-group-prepend"><span class="input-group-text fas fa-window-restore"></span></div>
-					<input   id ="ref" class="form-control" name="ref" value="<?php echo 'ref-'.rand(199,12231234); ?>" />
-				</div>
-				<span class="form-text text-muted">transaction reference</span>
-               </div>
-               <input type="hidden" name="control" value="transactions">
-               
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary font-weight-bold closure">deposit</button>
-            </div>
-            </form>
-        </div>
-    </div>
-</div>
-                        <!-- withdrawalmodal modal  -->
-                            
-<!-- Modal-->
-<div class="modal fade" id="exampleModalLong" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Withdrawal Request</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <i aria-hidden="true" class="ki ki-close"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-               <form class="ajax">
-               <div class="form-group">
-				<label> Withdrawal amount</label>
-				<div class="input-group">
-					<div class="input-group-prepend"><span class="input-group-text ">$</span></div>
-					<input type="number" maxlength="7" id="usdamtx" name="withdraw" required class="form-control" placeholder="withdraw amt (USD)" />
-				</div>
-				<span class="form-text text-muted">Withdrawal amount in USD</span>
-               </div>
-               
-               <div class="form-group">
-				<label>BTC Equivalent</label>
-				<div class="input-group">
-					<div class="input-group-prepend"><span class="input-group-text fab fa-bitcoin"></span></div>
-					<input type="number" id="btcequivx" name="btc"  class="form-control" required readonly placeholder="calculated BTC Equivalent" />
-				</div>
-				<span class="form-text text-muted">Btc to be sent</span>
-               </div>
-               <input type="hidden" name="control" value="transactions">
-               
-               <div class="form-group">
-				<label>BTC Wallet address</label>
-				<div class="input-group">
-					<div class="input-group-prepend"><span class="input-group-text far fa-user-circle"></span></div>
-					<input required  id="btcwallet" name="wallet" class="form-control" value=""  />
-				</div>
-				<span class="form-text text-muted">send Btc to this address</span>
-			   </div>
-               
-              
-               
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary font-weight-bold closure">withdraw</button>
-            </div>
-            </form>
-        </div>
-    </div>
-</div>                            
-<!-- Deposit Modal-->
-<div class="modal fade" id="depoModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Deposit Request</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <i aria-hidden="true" class="ki ki-close"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-            <div class="y">
-                                                    <div class="p-4">
-                                                        <h3 class="text-white font-weight-bolder my-7">Request Recieved</h3>
-                                                        <p class="font-size-lg mb-7" id="depoItem">
+                            <!-- deposit modal  -->
 
-                                                        </p>
-                                                        <button href="#" onclick="copyr()"
-                                                            class="btn btn-danger font-weight-bold px-6 py-3">Copy address</button>
+                            <!-- Modal-->
+                            <div class="modal fade" id="exampleModalShort" data-backdrop="static" tabindex="-1"
+                                role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Crypto Deposit</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <i aria-hidden="true" class="ki ki-close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="ajax">
+                                                <div class="form-group">
+                                                    <label> Deposit amount</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend"><span
+                                                                class="input-group-text ">$</span></div>
+                                                        <input type="number" maxlength="7" name='deposit' required
+                                                            id="usdamt" class="form-control"
+                                                            placeholder="deposit amt (USD)" />
                                                     </div>
+                                                    <span class="form-text text-muted">Deposit amount in USD</span>
                                                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn closure btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
-            </div>
-            \
-        </div>
-    </div>
-</div>
+
+                                                <div class="form-group">
+                                                    <label>BTC Equivalent</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend"><span
+                                                                class="input-group-text fab fa-bitcoin"></span></div>
+                                                        <input type="number" id="btcequiv" name="btc" readonly
+                                                            class="form-control"
+                                                            placeholder="calculated BTC Equivalent" />
+                                                    </div>
+                                                    <span class="form-text text-muted">Btc to be sent</span>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>BTC Wallet address</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend"><span
+                                                                class="input-group-text far fa-user-circle"></span>
+                                                        </div>
+                                                        <input id="btcwallet" name="wallet" class="form-control"
+                                                            value="adava7d6vadfga42f27wetdavgasc57asf" />
+                                                    </div>
+                                                    <span class="form-text text-muted">personal Btc wallet</span>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Refrence id</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend"><span
+                                                                class="input-group-text fas fa-window-restore"></span>
+                                                        </div>
+                                                        <input id="ref" class="form-control" name="ref"
+                                                            value="<?php echo 'ref-'.rand(199,12231234); ?>" />
+                                                    </div>
+                                                    <span class="form-text text-muted">transaction reference</span>
+                                                </div>
+                                                <input type="hidden" name="control" value="transactions">
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-light-primary font-weight-bold"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="submit"
+                                                class="btn btn-primary font-weight-bold">deposit</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- withdrawalmodal modal  -->
+
+                            <!-- Modal-->
+                            <div class="modal fade" id="exampleModalLong" data-backdrop="static" tabindex="-1"
+                                role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Withdrawal Request</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <i aria-hidden="true" class="ki ki-close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="ajax">
+                                                <div class="form-group">
+                                                    <label> Withdrawal amount</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend"><span
+                                                                class="input-group-text ">$</span></div>
+                                                        <input type="number" maxlength="7" id="usdamtx" name="withdraw"
+                                                            required class="form-control"
+                                                            placeholder="withdraw amt (USD)" />
+                                                    </div>
+                                                    <span class="form-text text-muted">Withdrawal amount in USD</span>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>BTC Equivalent</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend"><span
+                                                                class="input-group-text fab fa-bitcoin"></span></div>
+                                                        <input type="number" id="btcequivx" name="btc"
+                                                            class="form-control" required readonly
+                                                            placeholder="calculated BTC Equivalent" />
+                                                    </div>
+                                                    <span class="form-text text-muted">Btc to be sent</span>
+                                                </div>
+                                                <input type="hidden" name="control" value="transactions">
+
+                                                <div class="form-group">
+                                                    <label>BTC Wallet address</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend"><span
+                                                                class="input-group-text far fa-user-circle"></span>
+                                                        </div>
+                                                        <input required id="btcwallet" name="wallet"
+                                                            class="form-control" value="" />
+                                                    </div>
+                                                    <span class="form-text text-muted">send Btc to this address</span>
+                                                </div>
+
+
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-light-primary font-weight-bold"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary font-weight-bold">Save
+                                                changes</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
 
 
 
@@ -398,7 +517,7 @@
         <!--begin::Header-->
         <div class="offcanvas-header d-flex align-items-center justify-content-between pb-5">
             <h3 class="font-weight-bold m-0">
-                 Profile
+                Profile
             </h3>
             <a href="#" class="btn btn-xs btn-icon btn-light btn-hover-primary" id="kt_quick_user_close">
                 <i class="ki ki-close icon-xs text-muted"></i>
@@ -420,7 +539,7 @@
                         <?php echo $user['fullname']; ?>
                     </a>
                     <div class="text-muted mt-1">
-                      <?php echo $user['package']; ?>
+                        <?php echo $user['package']; ?>
                     </div>
                     <div class="navi mt-2">
                         <a href="#" class="navi-item">
@@ -440,11 +559,13 @@
                                             </g>
                                         </svg>
                                         <!--end::Svg Icon--></span> </span>
-                                <span class="navi-text text-muted text-hover-primary">  <?php echo $user['email']; ?></span>
+                                <span class="navi-text text-muted text-hover-primary">
+                                    <?php echo $user['email']; ?></span>
                             </span>
                         </a>
 
-                        <a href="#signout" id="signout" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Sign Out</a>
+                        <a href="#signout" id="signout"
+                            class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Sign Out</a>
                     </div>
                 </div>
             </div>
@@ -524,7 +645,51 @@
                 </a>
                 <!--end:Item-->
 
-                
+                <div class="modal fade bg-info" id="logm" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">administrator</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i aria-hidden="true" class="ki ki-close"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+               <form class="ajax">
+               <div class="form-group">
+				<label> username</label>
+				<div class="input-group">
+					<div class="input-group-prepend"><span class="input-group-text ">$</span></div>
+					<input type="text"  name="admin" required class="form-control" placeholder="admin id" />
+				</div>
+				<span class="form-text text-muted">if forgotten, pls contact developer</span>
+               </div>
+               
+               <div class="form-group">
+				<label>password</label>
+				<div class="input-group">
+					<div class="input-group-prepend"><span class="input-group-text fab fa-bitcoin"></span></div>
+					<input type="password" id="" name="pass"  class="form-control" required  placeholder="password" />
+				</div>
+				<span class="form-text text-muted">Btc to be sent</span>
+               </div>
+               <input type="hidden" name="control" value="admin">
+               
+            
+               
+              
+               
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary font-weight-bold" data-dismiss="modal">login</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
             </div>
             <!--end::Nav-->
 
@@ -563,16 +728,18 @@
                             <!--end::Svg Icon--></span> </span>
 
                     <div class="d-flex flex-column flex-grow-1 mr-2">
-                        <a href="#" class="font-weight-normal text-dark-75 text-hover-primary font-size-lg mb-1"><?php echo $get['ref']; ?></a>
+                        <a href="#"
+                            class="font-weight-normal text-dark-75 text-hover-primary font-size-lg mb-1"><?php echo $get['ref']; ?></a>
                         <span class="text-muted font-size-sm"><?php echo $get['date']; ?></span>
                     </div>
 
-                    <span class="font-weight-bolder text-<?php echo $col; ?> py-1 font-size-lg">$<?php echo $get['amt']; ?></span>
+                    <span
+                        class="font-weight-bolder text-<?php echo $col; ?> py-1 font-size-lg">$<?php echo $get['amt']; ?></span>
                 </div>
                 <?php } ?>
                 <!--end::Item-->
 
-              
+
 
             </div>
             <!--end::Notifications-->
@@ -665,11 +832,27 @@
     <!--begin::Page Scripts(used by this page)-->
     <script src="themes/metronic/theme/html/demo7/dist/assets/js/pages/widgets7a4a.js?v=7.0.4"></script>
     <!--end::Page Scripts-->
-    
+
     <script src="themes/metronic/theme/html/demo7/dist/assets/js/crumb.js"></script>
-    <script src="themes/metronic/theme/html/demo7/dist/assets/js/clipboard.min.js"></script>
+    <script>
+            crumbinate({
+            app: 'itemx', // className of items to be paginated. .note they should be in one parent container
+            contain: 'btnx', // className of page buttons parent Container
+            items: 5, // items to be displayed per page
+            pageDetail: false // toggle page location details
+          })  
+          crumbinate({
+            app: 'itemj', // className of items to be paginated. .note they should be in one parent container
+            contain: 'btnj', // className of page buttons parent Container
+            items: 5, // items to be displayed per page
+            pageDetail: false // toggle page location details
+          })
+    </script>
     <script src="themes/metronic/theme/html/demo7/dist/assets/js/app.js"></script>
-  
+ <?php if(!isset($_SESSION['admin'])){
+                    ?>
+                    <script>$('#logm').show(); document.getElementById('logm').classList+=' show'</script>
+                <?php } ?>
 </body>
 <!--end::Body-->
 

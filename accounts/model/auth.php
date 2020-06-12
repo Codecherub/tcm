@@ -22,13 +22,14 @@ if(isset($_POST['new_user'])){
             'action'=>array('alert'),
             'msg' => 'this email has already been used.',
             'blob'=>array(
-                'alert'=>'warning'
+                'alert'=>'warning',
+                'port'=>array('location'=>'auth','time'=>3000)
             )
         );    
     } else{
         if(mysqli_query($db,"insert into users(fullname,email,password,package) values('$new_user','$email','$password','basic')")){
             $result = array(
-                'action'=>array('alert'),
+                'action'=>array('alert','port'),
                 'msg' => 'hi '.$new_user.',  we sent an email to '.$email.' for id verification. pls check your email address to proceed. Thanks!  ',
                 'blob'=>array(
                     'alert'=>'success')
@@ -54,10 +55,10 @@ if(isset($_POST['auth'])){
         $G = mysqli_query($db,"select * from users where email='$email' and password='$password'");
         $get = mysqli_fetch_array($G);
         $result = array(
-            'action'=>array('alert','port'),
+            'action'=>array('toast','port'),
             'msg' => 'welcome back '.$get['fullname'].'  ',
             'blob'=>array(
-                'alert'=>'success',
+                'toast'=>'green',
                 'port'=>array('location'=>'dashboard','time'=>3000)
                 )
         ); 

@@ -156,11 +156,11 @@
                                                         href="LiveTrade" class="menu-link "><span
                                                             class="menu-text">LiveTrade</span></a>
                                                 </li>
-                                                <li class="menu-item " id="<?php echo $request; ?>"  aria-haspopup="true"><a
+                                                <li class="menu-item " id="upgrades"  aria-haspopup="true"><a
                                                         href="upgrades" class="menu-link "><span
                                                             class="menu-text">Upgrades</span></a>
                                                 </li>
-                                                <li class="menu-item    " id="<?php echo $request; ?>"  aria-haspopup="true"><a
+                                                <li class="menu-item    " id="profile"  aria-haspopup="true"><a
                                                         href="profile" class="menu-link "><span
                                                             class="menu-text">profile</span></a>
                                                 </li>

@@ -77,7 +77,7 @@
                                                                     <rect fill="#000000" x="3" y="13" width="3"
                                                                         height="7" rx="1.5" />
                                                                 </g>
-                                                            </svg> <b style="font-size:1.8em; padding:8px">$2550</b>
+                                                            </svg> <b style="font-size:1.8em; padding:8px">$<?php echo $user['wallet']; ?></b>
                                                             <!--end::Svg Icon--></span> <a href="#"
                                                             class="text-warning font-weight-bold font-size-h6">
                                                             Wallet
@@ -106,7 +106,7 @@
                                                             </svg>
                                                             <!--end::Svg Icon--></span> <a href="#"
                                                             class="text-primary font-weight-bold font-size-h6 mt-2">
-                                                            auto-trading
+                                                            package
                                                         </a>
                                                     </div>
                                                 </div>

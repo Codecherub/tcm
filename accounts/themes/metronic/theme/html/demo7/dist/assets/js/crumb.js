@@ -25,14 +25,14 @@ function crumbinate(data) {
 
   //assign specific className as id's to the items items
   const items = $('.' + itemClassName)
-  for (i = 0; i < items.length; i++) {
+  for (let i = 0; i < items.length; i++) {
     items[i].classList += (' ' + itemClassName + '-' + Number(i + 1))
   }
 
 
 
   //unload pagination buttons.   assign a "data-to" attribute which holds the page id to be controlled by ech button
-  for (i = 1; i <= pages; i++) {
+  for (let i = 1; i <= pages; i++) {
     $('.' + btnClassName).append('<button class="btn btn-primary ' + autoBtnClass + ' crumble" data-to=' + i + '>' + i + '</button>')
     //$('.btns').append(i)
     // console.log(i)
@@ -44,7 +44,7 @@ function crumbinate(data) {
   //main paginator function. loads item within page boundary
   function paginate(param) {
     $('.' + itemClassName).hide() //hide all items
-    for (i = param.start; i <= param.stop; i++) {
+    for (let i = param.start; i <= param.stop; i++) {
       $('.' + itemClassName + '-' + i).show() // show items within the page boundary
     }
 

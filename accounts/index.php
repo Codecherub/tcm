@@ -1,13 +1,13 @@
 
 <?php
 
-// require_once "./mvc/classes.php";
+require_once "model/btc.php";
 
 $request = $_SERVER['REQUEST_URI'];
 $request = explode('/',$request);
-$request = $request[3];
+$request = $request[2];
 
-$pages = ["overview","wallet","LiveTrade","upgrades","profile","trade charts","auth","signup","tiles"];
+$pages = ["overview","wallet","LiveTrade","upgrades","profile","onboarding","auth","signup","admin"];
 
   if($request === "" || $request === "dashboard"){
       require "./views/dashboard.php";

@@ -20,11 +20,14 @@ if(isset($_POST['deposit'])){
     if(mysqli_query($db,"insert into trans(amt,btc,ref,user,date,type)
      values('$deposit','$btc','$ref','$userX','$date','d')")){
         $result = array(
-            'action'=>array('alert','loader'),
-            'msg'=>'your deposit request has been succesfully recieved,<br/>
-             pls follow the instructions transfer '.$btc.' BTC to '.$wallet.' with the unique refe ID: '.$ref.'<br/> .
-             once the tranaction has been confirmed by our realtime software, your wallet balance will be auomatically updated ',
-             'blob'=>array('alert'=>'success','loader'=>'trans')
+            'msg'=>'Deposit Requested',
+            'action'=>array('loader','depo','toast'),
+            'msgx'=>'your deposit request has been succesfully recieved, 
+             please follow the instructions to complete this transaction:<br> transfer <span class="text-primary">'.$btc.' BTC</span> to your generated bitcoin address<br>
+             <input value="'.$wallet.'"  class=" form-control  " id="btxwall">
+                <br>with your unique ref ID: '.$ref.'<br/>.
+             once the tranaction has been confirmed by our realtime software, your wallet balance will be  updated automatically ',
+             'blob'=>array('loader'=>'trans','toast'=>'green')
         );
     } else {
         $result = array(
@@ -117,3 +120,4 @@ if(isset($_POST['profile'])){
         );
     }
 }
+

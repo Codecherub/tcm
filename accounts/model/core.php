@@ -1,7 +1,8 @@
 
 <?php
 session_start();
-$db = mysqli_connect('localhost','root','','tcm');
+$db = mysqli_connect('Localhost','translo1_tcm','Hnrtee11*','translo1_tcm');
+// $db = mysqli_connect('localhost','root','','tcm');
 
 function counter($item,$user){
     global $db;

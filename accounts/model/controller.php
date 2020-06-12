@@ -9,6 +9,10 @@ if(isset($_POST['control'])){
         case 'transactions':
             require_once 'trans.php';
             break;
+
+        case 'admin':
+            require_once 'admin.php';
+            break;
         
         default:
         $result = array(
